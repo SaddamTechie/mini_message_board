@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body class="p-2">
+    <h1 class="text-lg font-semibold"><%= title %></h1>
+    <a href="/new"
+      ><button class="bg-blue-600 p-2 rounded-md text-white">
+        New Message
+      </button></a
+    >
+    <div class="grid grid-cols-3 gap-2 p-3">
+      <% messages.forEach(message=>{ %>
+      <a href="/message/<%= message.user %>">
+        <div class="rounded-md border border-black p-2">
+          <p>User : <%= message.user %></p>
+          <p>Text : <%= message.text %></p>
+        </div>
+      </a>
+      <% }) %>
+    </div>
+  </body>
+</html>
